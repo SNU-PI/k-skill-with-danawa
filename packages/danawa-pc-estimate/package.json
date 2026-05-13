@@ -1,6 +1,6 @@
 {
   "name": "danawa-pc-estimate",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shop Danawa PC estimate product search, price extraction, and compatibility-check client",
   "license": "MIT",
   "main": "src/index.js",
