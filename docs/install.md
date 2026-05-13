@@ -12,7 +12,7 @@
 
 ## 에이전트에게 맡기기
 
-Codex나 Claude Code에 아래 문장을 그대로 붙여 넣으면 된다.
+Codex, OpenCode, Claude Code에 아래 문장을 그대로 붙여 넣으면 된다.
 
 ```text
 이 레포의 설치 문서를 읽고 k-skill 전체 스킬을 먼저 설치해줘. 설치가 끝나면 k-skill-setup 스킬을 사용해서 credential 확보와 환경변수 확인까지 이어서 진행해줘. 끝나면 설치된 스킬과 다음 단계만 짧게 정리해.
@@ -85,6 +85,7 @@ npx --yes skills add <owner/repo> \
   --skill zipcode-search \
   --skill delivery-tracking \
   --skill coupang-product-search \
+  --skill danawa-pc-estimate \
   --skill bunjang-search \
   --skill used-car-price-search \
   --skill korean-spell-check \
@@ -196,6 +197,23 @@ node dist/bin.js get /api/oliveyoung/products --keyword 선크림 --size 5 --jso
 node dist/bin.js get /api/oliveyoung/inventory --keyword 선크림 --storeKeyword 명동 --size 5 --json
 ```
 
+### `danawa-pc-estimate` CLI quickstart
+
+`danawa-pc-estimate` 는 이 레포의 workspace 패키지와 npm package를 통해 샵다나와 PC견적 공개 화면 요청을 조회한다.
+
+- 기본 경로는 **CLI first** 다.
+- 가장 빠른 smoke test 는 `npx --yes danawa-pc-estimate search --category CPU --query 9800X3D --limit 3`
+- 반복 사용이면 `npm install -g danawa-pc-estimate`
+- 조건 검색 전에는 `options --category <카테고리>` 로 다나와가 노출하는 정확한 필터 라벨을 확인한다.
+- 로그인, 장바구니 저장, 주문, 견적 신청은 하지 않는다.
+
+```bash
+npx --yes danawa-pc-estimate options --category CPU
+npx --yes danawa-pc-estimate search --category CPU --query 9800X3D --maker AMD --filter "AMD(소켓AM5)" --filter DDR5 --limit 3
+npx --yes danawa-pc-estimate compat 70531547 20324882
+npx --yes danawa-pc-estimate prices 70531547 20324882
+```
+
 ### `bunjang-search` upstream CLI quickstart
 
 `bunjang-search` 는 upstream 원본 [`pinion05/bunjangcli`](https://github.com/pinion05/bunjangcli) / npm package [`bunjang-cli`](https://www.npmjs.com/package/bunjang-cli) 를 그대로 사용한다.
@@ -277,7 +295,7 @@ npm run ci
 ### Node 패키지
 
 ```bash
-npm install -g kordoc pdfjs-dist kbo-game kbl-results kleague-results lck-analytics toss-securities hipass-receipt k-lotto coupang-product-search used-car-price-search cheap-gas-nearby public-restroom-nearby korean-law-mcp market-kurly-search daiso bunjang-cli court-auction-notice-search
+npm install -g kordoc pdfjs-dist kbo-game kbl-results kleague-results lck-analytics toss-securities hipass-receipt k-lotto coupang-product-search danawa-pc-estimate used-car-price-search cheap-gas-nearby public-restroom-nearby korean-law-mcp market-kurly-search daiso bunjang-cli court-auction-notice-search
 export NODE_PATH="$(npm root -g)"
 ```
 

@@ -254,7 +254,7 @@ test("repository docs advertise the used-car-price-search skill", () => {
   assert.match(install, /--skill used-car-price-search/);
   assert.match(
     install,
-    /npm install -g kordoc pdfjs-dist kbo-game kbl-results kleague-results lck-analytics toss-securities hipass-receipt k-lotto coupang-product-search used-car-price-search cheap-gas-nearby public-restroom-nearby korean-law-mcp/,
+    /npm install -g kordoc pdfjs-dist kbo-game kbl-results kleague-results lck-analytics toss-securities hipass-receipt k-lotto coupang-product-search danawa-pc-estimate used-car-price-search cheap-gas-nearby public-restroom-nearby korean-law-mcp/,
   );
 });
 
@@ -1160,6 +1160,25 @@ test("repository docs advertise the coupang-product-search skill", () => {
   assert.match(install, /--skill coupang-product-search/);
 });
 
+test("repository docs advertise the danawa-pc-estimate skill across the documented surfaces", () => {
+  const readme = read("README.md");
+  const install = read(path.join("docs", "install.md"));
+  const roadmap = read(path.join("docs", "roadmap.md"));
+  const sources = read(path.join("docs", "sources.md"));
+  const featureDocPath = path.join(repoRoot, "docs", "features", "danawa-pc-estimate.md");
+  const skillPath = path.join(repoRoot, "danawa-pc-estimate", "SKILL.md");
+
+  assert.ok(fs.existsSync(featureDocPath), "expected docs/features/danawa-pc-estimate.md to exist");
+  assert.ok(fs.existsSync(skillPath), "expected danawa-pc-estimate/SKILL.md to exist");
+  assert.match(readme, /\| 다나와 PC견적 \| `danawa-pc-estimate` \|/);
+  assert.match(readme, /\[다나와 PC견적 가이드\]\(docs\/features\/danawa-pc-estimate\.md\)/);
+  assert.match(install, /--skill danawa-pc-estimate/);
+  assert.match(install, /npm install -g .*danawa-pc-estimate/);
+  assert.match(install, /danawa-pc-estimate search --category CPU --query 9800X3D/);
+  assert.match(roadmap, /다나와 PC견적 스킬 출시/);
+  assert.match(sources, /methods=compatibility/);
+});
+
 test("coupang-product-search skill and docs use retention-corp coupang_partners MCP layer", () => {
   const skillPath = path.join(repoRoot, "coupang-product-search", "SKILL.md");
   const wrapperPath = path.join(repoRoot, "coupang-product-search", "scripts", "coupang_partners_mcp.py");
@@ -1222,6 +1241,7 @@ test("root pack:dry-run script covers all publishable workspaces", () => {
   assert.match(packageJson.scripts["pack:dry-run"], /workspace k-lotto/);
   assert.match(packageJson.scripts["pack:dry-run"], /workspace daiso-product-search/);
   assert.match(packageJson.scripts["pack:dry-run"], /workspace market-kurly-search/);
+  assert.match(packageJson.scripts["pack:dry-run"], /workspace danawa-pc-estimate/);
   assert.match(packageJson.scripts["pack:dry-run"], /workspace blue-ribbon-nearby/);
   assert.match(packageJson.scripts["pack:dry-run"], /workspace kakao-bar-nearby/);
   assert.match(packageJson.scripts["pack:dry-run"], /workspace public-restroom-nearby/);
@@ -3732,6 +3752,7 @@ const README_SKILL_NAME_COLUMN_MAPPING = [
   ["올라포케 역삼 포케", "hola-poke-yeoksam"],
   ["택배 배송조회", "delivery-tracking"],
   ["쿠팡 상품 검색", "coupang-product-search"],
+  ["다나와 PC견적", "danawa-pc-estimate"],
   ["번개장터 검색", "bunjang-search"],
   ["중고차 가격 조회", "used-car-price-search"],
   ["한국어 맞춤법 검사", "korean-spell-check"],

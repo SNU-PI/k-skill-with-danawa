@@ -71,6 +71,7 @@ Claude Code, Codex, OpenCode, OpenClaw/ClawHub 등 각종 코딩 에이전트 �
 | 올라포케 역삼 포케 | `hola-poke-yeoksam` | 올라포케 역삼점 메뉴, 매장 정보, 이벤트 참여 흐름 안내 | 불필요 | [올라포케 역삼 포케 가이드](docs/features/hola-poke-yeoksam.md) |
 | 택배 배송조회 | `delivery-tracking` | CJ대한통운·우체국 송장 번호로 배송 상태 조회 | 불필요 | [택배 배송조회 가이드](docs/features/delivery-tracking.md) |
 | 쿠팡 상품 검색 | `coupang-product-search` | 쿠팡 상품 검색, 로켓배송 필터, 가격대 검색, 비교, 베스트, 골드박스 특가 조회 | 선택사항 (운영 키 있으면 로컬 HMAC 경로, 없으면 hosted fallback) | [쿠팡 상품 검색 가이드](docs/features/coupang-product-search.md) |
+| 다나와 PC견적 | `danawa-pc-estimate` | 샵다나와 PC견적 부품 검색, 가격 추출, 조건 필터, 조합 호환성 체크 | 불필요 | [다나와 PC견적 가이드](docs/features/danawa-pc-estimate.md) |
 | 번개장터 검색 | `bunjang-search` | 번개장터 검색, 상세조회, 선택적 찜/채팅, AI TOON export | 불필요 | [번개장터 검색 가이드](docs/features/bunjang-search.md) |
 | 중고차 가격 조회 | `used-car-price-search` | 중고차 인수가/월 렌트료 비교 조회 | 불필요 | [중고차 가격 조회 가이드](docs/features/used-car-price-search.md) |
 | 한국어 맞춤법 검사 | `korean-spell-check` | 한국어 텍스트 맞춤법/문법 검사 및 교정안 정리 | 불필요 | [한국어 맞춤법 검사 가이드](docs/features/korean-spell-check.md) |
@@ -162,6 +163,7 @@ Claude Code, Codex, OpenCode, OpenClaw/ClawHub 등 각종 코딩 에이전트 �
 - [올라포케 역삼 포케 가이드](docs/features/hola-poke-yeoksam.md)
 - [택배 배송조회](docs/features/delivery-tracking.md)
 - [쿠팡 상품 검색](docs/features/coupang-product-search.md)
+- [다나와 PC견적 가이드](docs/features/danawa-pc-estimate.md)
 - [번개장터 검색 가이드](docs/features/bunjang-search.md)
 - [중고차 가격 조회 가이드](docs/features/used-car-price-search.md)
 - [한국어 맞춤법 검사 가이드](docs/features/korean-spell-check.md)

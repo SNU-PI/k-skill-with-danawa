@@ -124,6 +124,12 @@
 - coupang_partners local MCP contract: local://coupang-mcp
 - coupang_partners hosted fallback (credentialless, allowlist-gated): https://a.retn.kr/v1/public/assist
 - coupang_partners hosted fallback PR (merged): https://github.com/retention-corp/coupang_partners/pull/1
+- 샵다나와 PC견적 메인: https://shop.danawa.com/virtualestimate/?controller=estimateMain&methods=index&marketPlaceSeq=16
+- 샵다나와 PC견적 카테고리 슬롯: https://shop.danawa.com/virtualestimate/?controller=estimateMain&methods=wish
+- 샵다나와 PC견적 검색 옵션: https://shop.danawa.com/virtualestimate/?controller=estimateMain&methods=searchOption
+- 샵다나와 PC견적 상품 목록: https://shop.danawa.com/virtualestimate/?controller=estimateMain&methods=product
+- 샵다나와 PC견적 호환성 체크 JSON: https://shop.danawa.com/virtualestimate/?controller=estimateMain&methods=compatibility
+- 샵다나와 PC견적 선택 부품 가격표: https://shop.danawa.com/virtualestimate/?controller=estimateMain&methods=estimateByExternalGoodsInfo
 - bunjang-cli package: https://www.npmjs.com/package/bunjang-cli
 - bunjang-cli repo: https://github.com/pinion05/bunjangcli
 - 블루리본 메인: https://www.bluer.co.kr/
